@@ -5,30 +5,20 @@ import css from "./clearableInput.module.scss";
 type Input = HTMLInputElement;
 type Props = Partial<React.InputHTMLAttributes<Input>>;
 
-const makeHRM = hot(module);
-export const ClearableInput = makeHRM((prop: Props) => {
-    const { readOnly, disabled, onChange = () => {} } = prop;
+//const makeHRM = hot(module);
+export const ClearableInput = ((prop: Props) => {
+    const { value: propValue, readOnly, disabled, onChange = () => {} } = prop;
     const inputRef = React.useRef<Input>();
-    const [value, setValue] = React.useState("");
-    const nativeChange = React.useCallback((e) => {
-        console.log(e);
-    }, []);
-
-    React.useEffect(() => {
-        const input = inputRef.current;
-        input.addEventListener('change', nativeChange);
-        return () => input.removeEventListener('change', nativeChange);
-    })
-
+    const [value, setValue] = React.useState(propValue || "");   
+    
     const selfChange = (e: React.ChangeEvent<Input>) => {
         setValue(e.target.value);
-        onChange(e);
-        console.log(e, e.nativeEvent);
+        onChange(e);        
     };
 
     return (
         <div className={css.clearableInput}>
-            <input {...{ ...prop, onChange: selfChange }} ref={inputRef}></input>
+            <input {...{ ...prop, onChange: selfChange }} ref={inputRef}></input>            
             <ClearButton
                 visibility={!readOnly && !disabled && !!value}
                 onClick={(event) => {
@@ -36,12 +26,6 @@ export const ClearableInput = makeHRM((prop: Props) => {
                     event.stopPropagation();
                     const input = inputRef.current;
                     input.value = "";                    
-                    const inputEvent = new InputEvent('change', {                        
-                        bubbles: true,
-                        data: "",
-                        inputType: "insertText"
-                    });                    
-                    input.dispatchEvent(inputEvent);                                        
                 }}
             />
         </div>

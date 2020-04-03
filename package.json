@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Clearable input for react",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "tsCheck": "npx tsc -w --noEmit",
     "dev": "npx parcel index.html",
     "start": "concurrently -n typescript,devServer \"npm run tsCheck\" \"npm run dev\""
@@ -21,19 +21,27 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.13.0",
+    "@types/jest": "^25.1.5",
     "@types/react": "^16.9.31",
-    "@types/react-dom": "^16.9.6",
+    "@types/react-dom": "^16.9.6",    
     "autoprefixer": "^9.7.5",
     "concurrently": "5.1.0",
+    "jest": "^25.2.7",
     "parcel": "^1.12.4",
     "postcss-modules": "^1.5.0",
     "react-hot-loader": "^4.12.20",
     "sass": "^1.26.3",
+    "ts-jest": "^25.3.1",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3",
-    "typescript-plugin-css-modules": "^2.2.0"
+    "typescript-plugin-css-modules": "^2.2.0",
+    "@testing-library/react": "^8.0.1",
+    "@testing-library/jest-dom": "^8.0.1",
+    "jest-css-modules-transform": "^4.0.0",
+    "jest-environment-jsdom": "25.2.4",
+    "node-sass": "^4.13.1"
   },
   "alias": {
     "react-dom": "@hot-loader/react-dom"
-  }
+  } 
 }
