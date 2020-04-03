@@ -25,7 +25,11 @@ export const ClearableInput = ((prop: Props) => {
                     event.preventDefault();
                     event.stopPropagation();
                     const input = inputRef.current;
-                    input.value = "";                    
+                    // react wtf                               
+                    var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+                    nativeInputValueSetter.call(input, '');                    
+                    var ev2 = new Event('input', { bubbles: true});
+                    input.dispatchEvent(ev2); 
                 }}
             />
         </div>
