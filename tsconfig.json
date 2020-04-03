@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "Node",
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "target": "ES2015",
+        "lib": [
+            "DOM",
+            "ESNext"
+        ],
+        "plugins": [{ 
+                "name": "typescript-plugin-css-modules",
+                
+            }
+        ]
+    }
+}

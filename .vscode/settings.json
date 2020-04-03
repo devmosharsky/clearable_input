@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        ".cache/": true
+    },
+    "files.watcherExclude": {
+        ".cache/**": true,
+        "dist/**": true
+    },
+    "cSpell.words": [
+        "tslib"
+    ],
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "clearable_input",
+  "version": "1.0.0",
+  "description": "Clearable input for react",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsCheck": "npx tsc -w --noEmit",
+    "dev": "npx parcel index.html",
+    "start": "concurrently -n typescript,devServer \"npm run tsCheck\" \"npm run dev\""
+  },
+  "keywords": [
+    "react",
+    "input",
+    "clearable"
+  ],
+  "author": "dev.mosharsky",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@hot-loader/react-dom": "^16.13.0",
+    "@types/react": "^16.9.31",
+    "@types/react-dom": "^16.9.6",
+    "autoprefixer": "^9.7.5",
+    "concurrently": "5.1.0",
+    "parcel": "^1.12.4",
+    "postcss-modules": "^1.5.0",
+    "react-hot-loader": "^4.12.20",
+    "sass": "^1.26.3",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3",
+    "typescript-plugin-css-modules": "^2.2.0"
+  },
+  "alias": {
+    "react-dom": "@hot-loader/react-dom"
+  }
+}

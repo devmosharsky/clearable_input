@@ -1,0 +1,19 @@
+.clearableInput {
+    position: relative;
+    display: inline-block;
+    input {
+        padding-right: 20px;     
+    }
+    input:disabled, input:read-only {
+        padding-right: 0;     
+    }
+    button {
+        position: absolute;
+        right: 0px;
+        height: 100%;
+        width: 20px;
+        border: none;
+        background: none;
+        outline: none; 
+    }
+}
